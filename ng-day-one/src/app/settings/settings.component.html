@@ -1,0 +1,38 @@
+<div class="settings-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="mb-50">{{ pageTitle }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let settingName of settinggsSubArr; let i=index"
+                    [ngClass]="{'active': i == 0 }" (click)="addActiveCls($event)">{{settingName}}</li>
+               
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <div class="card text-left">
+                  <img class="card-img-top" src="holder.js/100px180/" alt="">
+                  <div class="card-body">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt tempore itaque qui molestiae fuga mollitia. Amet quis adipisci eum aliquam minima praesentium. Eum aspernatur quasi doloribus officia error nostrum aliquid?</p>
+                  </div>
+                </div>
+
+                <div class="input-group input-group-sm mb-3 mt-30">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="myTextStr">
+                  </div>
+
+                  <p class="mt-30" *ngIf="myTextStr">Yout typed: {{myTextStr}}</p>
+
+            </div>
+        </div>
+    </div>
+
+</div>
