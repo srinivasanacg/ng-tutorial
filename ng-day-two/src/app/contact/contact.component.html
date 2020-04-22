@@ -1,0 +1,114 @@
+<div class="contact-wrapper">
+    <div class="jumbotron jumbotron-fluid custom-jumbotron">
+      <div class="container">
+        <h1 class="display-3">I am from Contact</h1>
+        <p class="lead mt-20 sub-title">Jumbo helper text</p>
+        <hr class="my-2">
+        <p>More info</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
+        </p>
+      </div>
+    </div>
+
+
+<div class="container">
+    <!-- <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="holder.js/100x180/" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-text">Text</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="holder.js/100x180/" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-text">Text</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="holder.js/100x180/" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-text">Text</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="holder.js/100x180/" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-text">Text</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="container">
+                <h4 class="mb-50">{{ formTitle }}</h4>
+
+                <div *ngIf="showForm">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" aria-describedby="emailHelp" [(ngModel)]="emailAddressVal">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                       <b><p *ngIf="emailAddressVal">your email address is {{emailAddressVal}}</p></b>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Age</label>
+                        <input type="text" class="form-control" aria-describedby="emailHelp" [value]="ageVal" [disabled]="listDisable">
+                      </div>
+                
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <button class="btn btn-primary mt-50 mb-50" (click)="toggleList()">{{ showList ? 'hide list' : 'show list' }}</button>
+                <hr>
+                <div class="row" *ngIf="showList">
+                    
+                    <div class="col-md-6">
+                        <ul class="list-group mt-50 mb-50">
+                            <li class="list-group-item" *ngFor="let list of lists; let i=index" [ngClass]="{'active': i == 0 }" (click)="addActiveCls($event)">{{list}}</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group mt-50 mb-50">
+                            <li class="list-group-item" *ngFor="let student of students; let i=index" [ngClass]="{'active': i == 0 }">
+                                <p>ID: {{student.id}}</p>
+                                <p>Name: {{student.name}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="">student name</label>
+                  <select class="form-control" >
+                    <option *ngFor="let student of students; let i=index" [value]="student.id">{{student.name}}</option>
+                  </select>
+                </div>
+
+
+
+              
+                   
+                
+            </div>
+         
+        </div>
+        
+    </div>
+</div>
+
+  </div>
